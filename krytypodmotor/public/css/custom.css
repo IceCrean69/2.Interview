@@ -1,0 +1,29 @@
+/* Target the pagination arrows */
+body {
+    background-color: #d6d6d6;
+}
+
+.product-table {
+    margin-top: 20px;
+}
+
+
+.pagination-nav-link .chevron-icon {
+    width: 12px;  /* Adjust this value to make the arrow smaller */
+    height: 12px; /* Adjust this value to make the arrow smaller */
+}
+
+/* If it's using a font icon, you might need something like this instead: */
+.pagination-nav-link .chevron-icon::before {
+    font-size: 12px; /* Adjust this value to make the arrow smaller */
+}
+
+/* If you're using Bootstrap's default pagination, you might need to target it like this: */
+.pagination .page-link .chevron-icon {
+    font-size: 12px; /* Adjust this value to make the arrow smaller */
+}
+
+/* You can also add some padding to give the smaller icon some space: */
+.pagination .page-link {
+    padding: 0.5rem 0.75rem;
+}

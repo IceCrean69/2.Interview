@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Produkty - Kryty pod motor</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
+    
 </head>
 <body>
     <div class="container mt-4">
@@ -14,7 +16,7 @@
             <div class="row">
                 <div class="col-md-3">
                     <select name="brand" class="form-select">
-                        <option value="">Všechny značky</option>
+                        <option value="">Všechny značky</option> 
                         @foreach($brands as $brand)
                             <option value="{{ $brand->id }}" {{ request('brand') == $brand->id ? 'selected' : '' }}>
                                 {{ $brand->name }}
@@ -76,11 +78,11 @@
             <tbody>
                 @foreach($products as $product)
                     <tr>
-                        <td>{{ $product->code }}</td>
-                        <td>{{ $product->name }}</td>
-                        <td>{{ $product->brand->name }}</td>
-                        <td>{{ $product->material->name }}</td>
-                        <td>{{ number_format($product->price, 2, ',', ' ') }} Kč</td>
+                        <td>{{ $product -> code }}</td>
+                        <td>{{ $product -> name }}</td>
+                        <td>{{ $product -> brand -> name }}</td>
+                        <td>{{ $product -> material -> name }}</td>
+                        <td>{{ number_format($product -> price, 2, ',', ' ') }} Kč</td>
                         <td>
                             <a href="{{ route('products.edit', $product) }}" class="btn btn-sm btn-primary">Upravit</a>
                         </td>
@@ -89,7 +91,7 @@
             </tbody>
         </table>
 
-        {{ $products->links() }}
+        {{ $products -> links() }}
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>

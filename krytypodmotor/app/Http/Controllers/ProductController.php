@@ -94,12 +94,12 @@ class ProductController extends Controller
 
             foreach ($products as $product) {
                 fputcsv($file, array(
-                    $product->code,
-                    $product->name,
-                    $product->brand->name,
-                    $product->material->name,
-                    $product->price,
-                    $product->description
+                    $product -> code,
+                    $product -> name,
+                    $product -> brand->name,
+                    $product -> material->name,
+                    $product -> price,
+                    $product -> description
                 ));
             }
             fclose($file);
